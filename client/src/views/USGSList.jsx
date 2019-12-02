@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class ListView extends React.Component {
+class USGSList extends React.Component {
   renderQuakes = () => {
     return this.props.quakes.map((quake, key) => {
       return (
@@ -22,4 +22,4 @@ class ListView extends React.Component {
   }
 }
 
-export default ListView;
+export default USGSList;

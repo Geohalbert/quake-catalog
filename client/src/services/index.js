@@ -1,2 +1,2 @@
 export * from "./UserService.js";
-export * from "./QuakeService.js";
+export * from "./USGSService.js";

@@ -1,9 +1,9 @@
 import React from "react";
-import QuakeService from "../services/QuakeService";
-import "../style/QueryForm.css";
+import USGSService from "../services/USGSService";
+import "../style/USGSQuery.css";
 import SimpleMap from "../components/Map.jsx";
 
-class QuakeView extends React.Component {
+class USGSQuakeView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,7 @@ class QuakeView extends React.Component {
       coordinates: []
     };
 
-    this.quakeService = new QuakeService();
+    this.quakeService = new USGSService();
   }
 
   componentDidMount() {
@@ -54,4 +54,4 @@ class QuakeView extends React.Component {
   }
 }
 
-export default QuakeView;
+export default USGSQuakeView;

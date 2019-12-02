@@ -1,11 +1,11 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-import ListView from "./ListView";
-import "../style/QueryForm.css";
-import QuakeService from "../services/QuakeService";
+import USGSList from "./USGSList";
+import "../style/USGSQuery.css";
+import USGSService from "../services/USGSService";
 import "react-datepicker/dist/react-datepicker.css";
 
-class QueryForm extends React.Component {
+class USGSQuery extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -25,7 +25,7 @@ class QueryForm extends React.Component {
       quakes: []
     };
 
-    this.quakeService = new QuakeService();
+    this.quakeService = new USGSService();
     this.handleChange = this.handleChange.bind(this);
     this.baseState = this.state;
   }
@@ -181,7 +181,7 @@ class QueryForm extends React.Component {
         </form>
         {this.state.loading && <div>GATHERING DATA</div>}
         {this.state.quakes.length > 0 && (
-          <ListView quakes={this.state.quakes} />
+          <USGSList quakes={this.state.quakes} />
         )}
         <button onClick={this.submitQuery} id="submitButton">
           Submit Query
@@ -193,4 +193,4 @@ class QueryForm extends React.Component {
     );
   }
 }
-export default QueryForm;
+export default USGSQuery;

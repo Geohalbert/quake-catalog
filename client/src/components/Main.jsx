@@ -1,16 +1,16 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import HomeView from "../views/HomeView.jsx";
-import QuakeView from "../views/QuakeView.jsx";
-import QueryForm from "../views/QueryForm.jsx";
+import USGSQuakeView from "../views/USGSQuakeView.jsx";
+import USGSQuery from "../views/USGSQuery.jsx";
 
 function Main() {
   return (
     <main>
       <Switch>
         <Route exact path="/" component={HomeView} />
-        <Route exact path="/query" component={QueryForm} />
-        <Route path="/query/:id" component={QuakeView} />
+        <Route exact path="/query" component={USGSQuery} />
+        <Route path="/query/:id" component={USGSQuakeView} />
       </Switch>
     </main>
   );

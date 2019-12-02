@@ -1,19 +1,19 @@
 import QuakesList from "./QuakesList";
 import QuakesInsert from "./QuakesInsert";
 import QuakesUpdate from "./QuakesUpdate";
-import ListView from "./ListView";
-import QueryForm from "./QueryForm";
+import USGSList from "./USGSList";
+import USGSQuery from "./USGSQuery";
 import HomeView from "./HomeView";
 import MapContainer from "./MapContainer";
-import QuakeView from "./QuakeView";
+import USGSQuakeView from "./USGSQuakeView";
 
 export {
   QuakesList,
   QuakesInsert,
   QuakesUpdate,
-  ListView,
-  QueryForm,
+  USGSList,
+  USGSQuery,
   HomeView,
   MapContainer,
-  QuakeView
+  USGSQuakeView
 };
