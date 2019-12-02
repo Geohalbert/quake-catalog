@@ -1,17 +1,14 @@
 import axios from "axios";
-const API_URL =
-  "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson";
+const api = axios.create({
+  baseURL: "http://localhost:3000/api"
+});
 
 class QuakeService {
-  async getQuakeList(queryString) {
-    const url = `${API_URL}${queryString}`;
-    return axios.get(url).then(response => response.data.features);
-  }
-
-  async getQuake(id) {
-    const url = `${API_URL}&eventid=${id}`;
-    return axios.get(url).then(response => response.data);
-  }
+  insertQuake = payload => api.post(`/quake`, payload);
+  getAllQuakes = () => api.get(`/quakes`);
+  updateQuakeById = (id, payload) => api.put(`/quake/${id}`, payload);
+  deleteQuakeById = id => api.delete(`/quake/${id}`);
+  getQuakeById = id => api.get(`/quake/${id}`);
 }
 
 export default QuakeService;

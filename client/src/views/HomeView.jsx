@@ -12,10 +12,14 @@ function HomeView() {
           visualizations of this data.
         </h3>
         <br />
+        <h3>
+          To access your saved quakes, click{" "}
+          <Link to={`/quakes`}>here</Link>
+        </h3>
         <br />
         <h3>
-          To get started without creating a user profile, click{" "}
-          <Link to={`/query`}>Here</Link>
+          To learn more about the USGS API, click{" "}
+          <a href="https://earthquake.usgs.gov/fdsnws/event/1/" >here</a>
         </h3>
       </div>
     </div>

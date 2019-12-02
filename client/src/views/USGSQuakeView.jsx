@@ -1,5 +1,5 @@
 import React from "react";
-import USGSService from ".../services/USGSService"
+import USGSService from "../services/USGSService"
 import "../style/USGSQuery.css";
 import SimpleMap from "../components/Map.jsx";
 

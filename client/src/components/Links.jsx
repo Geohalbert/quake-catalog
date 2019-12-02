@@ -19,18 +19,17 @@ class Links extends Component {
         return (
             <React.Fragment>
                 <Link to="/" className="navbar-brand">
-                    Earthquake Catalog
+                    About
                 </Link>
+                <Link to={`/USGS`} className="navbar-brand">
+                            Earthquake Query</Link>
+                            <Link to={`/quakes`} className="navbar-brand">
+                            Saved Quakes</Link>
                 <Collapse>
                     <List>
                         <Item>
-                            <Link to={`/query`} className="nav-link">
-                            Earthquake Query</Link>
-                        </Item>
-                        <Item>
-                            <Link to="/" className="nav-link">
-                                Home
-                            </Link>
+                            <Link to={`/quakes/create`} className="nav-link">
+                            Create Quake Data</Link>
                         </Item>
                     </List>
                 </Collapse>

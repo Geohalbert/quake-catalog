@@ -2,7 +2,7 @@ import React from "react";
 import DatePicker from "react-datepicker";
 import USGSList from "./USGSList";
 import "../style/USGSQuery.css";
-import USGSService from ".../services/USGSService"
+import USGSService from "../services/USGSService"
 import "react-datepicker/dist/react-datepicker.css";
 
 class USGSQuery extends React.Component {

@@ -19,7 +19,7 @@ class NavBar extends Component {
         return (
             <Container>
                 <Nav>
-                    <Banner />
+                    {/* <Banner /> */}
                     <Links />
                 </Nav>
             </Container>
