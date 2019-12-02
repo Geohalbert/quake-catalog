@@ -1,5 +1,5 @@
 import React from "react";
-import USGSService from "../services/USGSService";
+import USGSService from ".../services/USGSService"
 import "../style/USGSQuery.css";
 import SimpleMap from "../components/Map.jsx";
 
@@ -12,12 +12,12 @@ class USGSQuakeView extends React.Component {
       coordinates: []
     };
 
-    this.quakeService = new USGSService();
+    this.usgsService = new USGSService();
   }
 
   componentDidMount() {
     const quakeId = this.props.match.params.id;
-    this.quakeService.getQuake(quakeId).then(response => {
+    this.usgsService.getQuake(quakeId).then(response => {
       this.setState({
         quakeId: response.id,
         properties: response.properties,

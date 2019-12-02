@@ -2,7 +2,7 @@ import React from "react";
 import DatePicker from "react-datepicker";
 import USGSList from "./USGSList";
 import "../style/USGSQuery.css";
-import USGSService from "../services/USGSService";
+import USGSService from ".../services/USGSService"
 import "react-datepicker/dist/react-datepicker.css";
 
 class USGSQuery extends React.Component {
@@ -25,7 +25,7 @@ class USGSQuery extends React.Component {
       quakes: []
     };
 
-    this.quakeService = new USGSService();
+    this.usgsService = new USGSService();
     this.handleChange = this.handleChange.bind(this);
     this.baseState = this.state;
   }
@@ -72,7 +72,7 @@ class USGSQuery extends React.Component {
 
   submitQuery = () => {
     let queryParams = this.queryString();
-    this.quakeService.getQuakeList(queryParams).then(response => {
+    this.usgsService.getQuakeList(queryParams).then(response => {
       if (response.length > 0) {
         this.setState({ quakes: response, loading: false });
       } else {
