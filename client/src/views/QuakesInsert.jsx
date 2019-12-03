@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import api from "../api";
+import { Redirect } from 'react-router-dom'
 
 import styled from "styled-components";
 
@@ -41,7 +42,8 @@ class QuakesInsert extends Component {
 
     this.state = {
       name: "",
-      mag: ""
+      mag: "",
+      updated: false
     };
   }
 
@@ -66,13 +68,17 @@ class QuakesInsert extends Component {
       window.alert(`Quake inserted successfully`);
       this.setState({
         name: "",
-        mag: ""
+        mag: "",
+        updated: true
       });
     });
   };
 
   render() {
-    const { name, mag } = this.state;
+    const { name, mag, updated } = this.state;
+        if (updated) {
+            return <Redirect to="/quakes" />
+        }
     return (
       <Wrapper>
         <Title>Create Quake</Title>
@@ -96,7 +102,7 @@ class QuakesInsert extends Component {
           onChange={this.handleChangeInputMag}
         />
         <Button onClick={this.handleIncludeQuake}>Add Quake</Button>
-                <CancelButton href={'/quakes/list'}>Cancel</CancelButton>
+        <CancelButton href={'/quakes/list'}>Cancel</CancelButton>
       </Wrapper>
     );
   }

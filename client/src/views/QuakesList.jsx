@@ -21,19 +21,19 @@ const Delete = styled.div`
 `
 
 class UpdateQuake extends Component {
-    updateUser = event => {
+    updateQuake = event => {
         event.preventDefault()
 
         window.location.href = `/quakes/update/${this.props.id}`
     }
 
     render() {
-        return <Update onClick={this.updateUser}>Update</Update>
+        return <Update onClick={this.updateQuake}>Update</Update>
     }
 }
 
 class DeleteQuake extends Component {
-    deleteUser = event => {
+    deleteQuake = event => {
         event.preventDefault()
 
         if (
@@ -47,7 +47,7 @@ class DeleteQuake extends Component {
     }
 
     render() {
-        return <Delete onClick={this.deleteUser}>Delete</Delete>
+        return <Delete onClick={this.deleteQuake}>Delete</Delete>
     }
 }
 
