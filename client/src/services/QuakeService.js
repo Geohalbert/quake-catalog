@@ -1,14 +1,22 @@
 import axios from "axios";
+
 const api = axios.create({
   baseURL: "http://localhost:3000/api"
 });
 
-class QuakeService {
-  insertQuake = payload => api.post(`/quake`, payload);
-  getAllQuakes = () => api.get(`/quakes`);
-  updateQuakeById = (id, payload) => api.put(`/quake/${id}`, payload);
-  deleteQuakeById = id => api.delete(`/quake/${id}`);
-  getQuakeById = id => api.get(`/quake/${id}`);
-}
+export const insertQuake = payload => api.post(`/quake`, payload);
+export const getAllQuakes = () => api.get(`/quakes`);
+export const updateQuakeById = (id, payload) =>
+  api.put(`/quake/${id}`, payload);
+export const deleteQuakeById = id => api.delete(`/quake/${id}`);
+export const getQuakeById = id => api.get(`/quake/${id}`);
 
-export default QuakeService;
+const QuakeServices = {
+  insertQuake,
+  getAllQuakes,
+  updateQuakeById,
+  deleteQuakeById,
+  getQuakeById
+};
+
+export default QuakeServices;
