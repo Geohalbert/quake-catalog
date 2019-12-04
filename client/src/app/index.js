@@ -1,17 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { store } from "../store";
+import App from "./App";
 
-import { NavBar, Main } from "../components";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-
-function App() {
-  return (
-    <Router>
-      <NavBar />
-      <Main />
-    </Router>
-  );
-}
-
-export default App;
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
