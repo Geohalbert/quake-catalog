@@ -51,7 +51,7 @@ class USGSQuakeView extends React.Component {
     const time = properties.time;
     const payload = { name, mag, coordinates, time };
 
-    await api.insertQuake(payload).then(res => {
+    await api.addQuake(payload).then(res => {
       window.alert(`Quake saved successfully`);
       this.setState({
         saved: true

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import api from "../api";
 import { Redirect } from 'react-router-dom'
-
 import styled from "styled-components";
 
 const Title = styled.h1.attrs({
@@ -64,7 +63,7 @@ class QuakesInsert extends Component {
     const { name, mag } = this.state;
     const payload = { name, mag };
 
-    await api.insertQuake(payload).then(res => {
+    await api.addQuake(payload).then(res => {
       window.alert(`Quake inserted successfully`);
       this.setState({
         name: "",
