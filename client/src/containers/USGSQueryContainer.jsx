@@ -82,6 +82,7 @@ class USGSQueryContainer extends React.Component {
   render() {
     return (
       <USGSQuery
+        loading={this.state.loading}
         starttime={this.state.starttime}
         endtime={this.state.endtime}
         minmagnitude={this.state.minmagnitude}

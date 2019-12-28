@@ -1,7 +1,7 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 
-class SimpleMap extends React.Component {
+class Map extends React.Component {
   constructor(props) {
     super(props);
     // testing to see if it displays first by hardcoding state
@@ -34,4 +34,4 @@ class SimpleMap extends React.Component {
   }
 }
 
-export default SimpleMap;
+export default Map;

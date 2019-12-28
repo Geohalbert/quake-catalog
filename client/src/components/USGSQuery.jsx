@@ -102,9 +102,10 @@ class USGSQuery extends React.Component {
             </select>
           </label>
         </form>
-        {this.props.quakes.length > 0 && (
+        {this.props.quakes.length > 0 && !this.props.loading && (
           <USGSList quakes={this.props.quakes} />
         )}
+        {this.props.loading && (<div>LOADING DATA</div>)}
         <button onClick={this.props.submitQuery} id="submitButton">
           Submit Query
         </button>

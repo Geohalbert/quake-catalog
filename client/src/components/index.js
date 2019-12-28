@@ -1,25 +1,31 @@
-import Links from "./Links";
 import Banner from "./Banner";
-import NavBar from "./NavBar";
-import Map from "./Map";
-import USGS from "./USGS";
-import USGSQuery from "./USGSQuery";
+import CreateQuake from "./CreateQuake";
 import DeleteQuake from "./DeleteQuake";
-import UpdateQuake from "./UpdateQuake";
-import QuakeLocation from "./QuakeLocation";
+import Links from "./Links";
+import Map from "./Map";
+import NavBar from "./NavBar";
 import QuakeList from "./QuakeList";
+import QuakeLocation from "./QuakeLocation";
+import QueryList from "./QueryList";
+import UpdateQuake from "./UpdateQuake";
+import USGS from "./USGS";
 import USGSList from "./USGSList";
+import USGSQuake from "./USGSQuake";
+import USGSQuery from "./USGSQuery";
 
 export {
-  Links,
   Banner,
-  NavBar,
-  Map,
-  QuakeLocation,
-  USGS,
-  USGSQuery,
-  USGSList,
-  UpdateQuake,
+  CreateQuake,
   DeleteQuake,
-  QuakeList
+  Links,
+  Map,
+  NavBar,
+  QuakeList,
+  QuakeLocation,
+  QueryList,
+  UpdateQuake,
+  USGS,
+  USGSList,
+  USGSQuake,
+  USGSQuery
 };
