@@ -1,8 +1,8 @@
 import React from "react";
 import USGSQuery from "../components/USGSQuery";
-import "../style/USGSQuery.css";
 import USGSService from "../services/USGSService";
 import "react-datepicker/dist/react-datepicker.css";
+import "../style/USGSQuery.css";
 
 class USGSQueryContainer extends React.Component {
   constructor() {
@@ -80,40 +80,25 @@ class USGSQueryContainer extends React.Component {
   };
 
   render() {
-    const {
-      starttime,
-      endtime,
-      minmagnitude,
-      maxmagnitude,
-      minlatitude,
-      maxlatitude,
-      minlongitude,
-      maxlongitude,
-      orderby,
-      limit,
-      quakes
-    } = this.state;
-    console.log("USGSQuery container loaded")
     return (
       <USGSQuery
-        
-          starttime={starttime}
-          endtime={endtime}
-          minmagnitude={minmagnitude}
-          maxmagnitude={maxmagnitude}
-          minlatitude={minlatitude}
-          maxlatitude={maxlatitude}
-          minlongitude={minlongitude}
-          maxlongitude={maxlongitude}
-          orderby={orderby}
-          limit={limit}
-          quakes={quakes}
-          handleChange={this.handleChange}
-          handleStart={this.handleStart}
-          handleEnd={this.handleEnd}
-          submitQuery={this.submitQuery}
-          resetParams={this.resetParams}
-        
+        loading={this.state.loading}
+        starttime={this.state.starttime}
+        endtime={this.state.endtime}
+        minmagnitude={this.state.minmagnitude}
+        maxmagnitude={this.state.maxmagnitude}
+        minlatitude={this.state.minlatitude}
+        maxlatitude={this.state.maxlatitude}
+        minlongitude={this.state.minlongitude}
+        maxlongitude={this.state.maxlongitude}
+        orderby={this.state.orderby}
+        limit={this.state.limit}
+        quakes={this.state.quakes}
+        handleChange={this.handleChange}
+        handleStart={this.handleStart}
+        handleEnd={this.handleEnd}
+        submitQuery={this.submitQuery}
+        resetParams={this.resetParams}
       />
     );
   }
