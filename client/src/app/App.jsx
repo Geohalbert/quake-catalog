@@ -7,14 +7,15 @@ import { alertActions } from "../actions";
 
 import { NavBar } from "../components";
 import {
-  QuakesList,
-  QuakesInsert,
   QuakesUpdate,
-  USGSList,
-  USGSQuery,
-  HomeView,
-  USGSQuakeView
+  HomeView
 } from "../views";
+import {
+  QuakeListContainer,
+  CreateQuakeContainer,
+  USGSQuakeContainer,
+  USGSQueryContainer
+} from "../containers";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -40,11 +41,14 @@ class App extends React.Component {
             <NavBar />
             <Switch>
               <Route exact path="/" component={HomeView} />
-              <Route exact path="/USGS" component={USGSQuery} />
-              <Route path="/USGS/:id" component={USGSQuakeView} />
-              <Route path="/USGS/list" exact component={USGSList} />
-              <Route path="/quakes" exact component={QuakesList} />
-              <Route path="/quakes/create" exact component={QuakesInsert} />
+              <Route exact path="/USGS" component={USGSQueryContainer} />
+              <Route path="/USGS/:id" component={USGSQuakeContainer} />
+              <Route path="/quakes" exact component={QuakeListContainer} />
+              <Route
+                path="/quakes/create"
+                exact
+                component={CreateQuakeContainer}
+              />
               <Route path="/quakes/update/:id" exact component={QuakesUpdate} />
             </Switch>
           </Router>
