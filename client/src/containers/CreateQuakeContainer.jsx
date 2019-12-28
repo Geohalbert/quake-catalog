@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CreateQuake from "../components/CreateQuake";
+import { Redirect } from "react-router-dom";
 import api from "../api";
 
 export class CreateQuakeContainer extends Component {
@@ -42,7 +43,9 @@ export class CreateQuakeContainer extends Component {
 
   render() {
     const { name, mag, updated } = this.state;
-    console.log("create qquake container")
+    if (updated) {
+      return <Redirect to="/quakes" />;
+    }
     return (
       <CreateQuake
         handleChangeInputName={this.handleChangeInputName}

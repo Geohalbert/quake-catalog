@@ -4,7 +4,7 @@ import api from "../api";
 
 export class QuakeListContainer extends Component {
   constructor() {
-      super()
+    super();
     this.state = {
       quakes: [],
       isLoading: false
@@ -23,9 +23,10 @@ export class QuakeListContainer extends Component {
   };
 
   render() {
-      console.log("container check")
-    return (<QuakeList quakes={this.state.quakes} isLoading={this.state.isLoading}/>
-    )}
+    return (
+      <QuakeList quakes={this.state.quakes} isLoading={this.state.isLoading} />
+    );
+  }
 }
 
 export default QuakeListContainer;

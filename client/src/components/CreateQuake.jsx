@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-
-import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 
 const Title = styled.h1.attrs({
@@ -37,12 +35,7 @@ const CancelButton = styled.a.attrs({
 
 class CreateQuake extends Component {
   render() {
-
-    console.log("create qquake component")
-    const { name, mag, updated } = this.props;
-    if (updated) {
-      return <Redirect to="/quakes" />;
-    }
+    const { name, mag } = this.props;
     return (
       <Wrapper>
         <Title>Create Quake</Title>

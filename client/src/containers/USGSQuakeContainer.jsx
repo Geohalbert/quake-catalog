@@ -2,17 +2,10 @@ import React from "react";
 import USGSService from "../services/USGSService";
 import api from "../api";
 import { Redirect } from "react-router-dom";
-import "../style/USGSQuery.css";
 import SimpleMap from "../components/Map.jsx";
-import styled from "styled-components";
+import USGSQuake from "../components/USGSQuake.jsx";
 
-const Button = styled.button.attrs({
-  className: `btn btn-primary`
-})`
-  margin: 15px 15px 15px 5px;
-`;
-
-class USGSQuakeView extends React.Component {
+class USGSQuakeContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -67,15 +60,15 @@ class USGSQuakeView extends React.Component {
       return <Redirect to="/USGS" />;
     }
     return (
-      <div id="quake">
-        <div className="quake-details">
-          <div className="quake-property">Quake Id: {quakeId}</div>
-          <div className="quake-property">Place: {properties.place}</div>
-          <div className="quake-property">Coordinates: {coors}</div>
-          <div className="quake-property">Magnitude: {properties.mag}</div>
-          <div className="quake-property">Time: {convertTime}</div>
-        </div>
-        <Button onClick={this.saveToDatabase}>Save Quake</Button>
+      <div>
+        <USGSQuake
+          saveToDatabase={this.saveToDatabase}
+          quakeId={quakeId}
+          place={properties.place}
+          coors={coors}
+          mag={properties.mag}
+          time={convertTime}
+        />
         {/* for now Im just forcing SimpleMap to display */}
         {coordinates && <SimpleMap lat={coordinates[0]} lng={coordinates[1]} />}
       </div>
@@ -83,4 +76,4 @@ class USGSQuakeView extends React.Component {
   }
 }
 
-export default USGSQuakeView;
+export default USGSQuakeContainer;
