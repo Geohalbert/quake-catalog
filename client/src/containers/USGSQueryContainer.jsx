@@ -11,12 +11,12 @@ class USGSQueryContainer extends React.Component {
       loading: false,
       starttime: new Date().setDate(new Date().getDate() - 1),
       endtime: new Date(),
-      minmagnitude: 0,
-      maxmagnitude: 10,
-      minlatitude: -90,
-      maxlatitude: 90,
-      minlongitude: -180,
-      maxlongitude: 180,
+      minmagnitude: null,
+      maxmagnitude: null,
+      minlatitude: null,
+      maxlatitude: null,
+      minlongitude: null,
+      maxlongitude: null,
       orderby: "time",
       limit: 10,
       quakes: []
@@ -108,6 +108,7 @@ class USGSQueryContainer extends React.Component {
           orderby={orderby}
           limit={limit}
           quakes={quakes}
+          handleChange={this.handleChange}
           handleStart={this.handleStart}
           handleEnd={this.handleEnd}
           submitQuery={this.submitQuery}
