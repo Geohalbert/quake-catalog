@@ -15,7 +15,7 @@ import {
   HomeView,
   USGSQuakeView
 } from "../views";
-import QuakeListContainer from "../containers/QuakeListContainer"
+import {QuakeListContainer,CreateQuakeContainer} from "../containers"
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -45,7 +45,7 @@ class App extends React.Component {
               <Route path="/USGS/:id" component={USGSQuakeView} />
               <Route path="/USGS/list" exact component={USGSList} />
               <Route path="/quakes" exact component={QuakeListContainer} />
-              <Route path="/quakes/create" exact component={QuakesInsert} />
+              <Route path="/quakes/create" exact component={CreateQuakeContainer} />
               <Route path="/quakes/update/:id" exact component={QuakesUpdate} />
             </Switch>
           </Router>
