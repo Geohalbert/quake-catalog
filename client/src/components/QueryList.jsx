@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import ReactTable from 'react-table'
 import USGSService from '../services/USGSService'
+import {DeleteQuake,UpdateQuake} from "./index"
 
 import styled from 'styled-components'
 
 import 'react-table/react-table.css'
+const Wrapper = styled.div`
+  padding: 0 40px 40px 40px;
+`;
 
 class QueryList extends Component {
     constructor(props) {
@@ -55,7 +59,7 @@ class QueryList extends Component {
                 Header: 'Coordinates',
                 accessor: 'geometry.coordinates',
                 filterable: false,
-            }
+            },
             {
                 Header: '',
                 accessor: '',

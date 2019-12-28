@@ -5,12 +5,13 @@ import styled from "styled-components";
 import "react-table/react-table.css";
 
 import ReactTable from "react-table";
-
 const Wrapper = styled.div`
   padding: 0 40px 40px 40px;
 `;
 
+
 class QuakeList extends React.Component {
+  
   render() {
     const { quakes, isLoading } = this.props;
     console.log(`presentational component for QuakeList works`, quakes);
