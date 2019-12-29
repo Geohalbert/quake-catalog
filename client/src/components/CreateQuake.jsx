@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Title = styled.h1.attrs({
@@ -33,36 +34,42 @@ const CancelButton = styled.a.attrs({
   margin: 15px 15px 15px 5px;
 `;
 
-class CreateQuake extends Component {
-  render() {
-    const { name, mag } = this.props;
-    return (
-      <Wrapper>
-        <Title>Create Quake</Title>
+const CreateQuake = props => {
+  return (
+    <Wrapper>
+      <Title>Create Quake</Title>
 
-        <Label>Name: </Label>
-        <InputText
-          type="text"
-          value={name}
-          onChange={this.props.handleChangeInputName}
-        />
+      <Label>Name: </Label>
+      <InputText
+        type="text"
+        value={props.name}
+        onChange={props.handleChangeInputName}
+      />
 
-        <Label>Mag: </Label>
-        <InputText
-          type="number"
-          step="0.1"
-          lang="en-US"
-          min="0"
-          max="10"
-          pattern="[0-9]+([,\.][0-9]+)?"
-          value={mag}
-          onChange={this.props.handleChangeInputMag}
-        />
-        <Button onClick={this.props.onClick}>Add Quake</Button>
-        <CancelButton href={"/quakes/list"}>Cancel</CancelButton>
-      </Wrapper>
-    );
-  }
-}
+      <Label>Mag: </Label>
+      <InputText
+        type="number"
+        step="0.1"
+        lang="en-US"
+        min="0"
+        max="10"
+        pattern="[0-9]+([,\.][0-9]+)?"
+        value={props.mag}
+        onChange={props.handleChangeInputMag}
+      />
+      <Button onClick={props.onClick}>Add Quake</Button>
+      <CancelButton href={"/quakes/list"}>Cancel</CancelButton>
+    </Wrapper>
+  );
+};
+
+CreateQuake.propTypes = {
+  handleChangeInputName: PropTypes.func.isRequired,
+  handleChangeInputMag: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  mag: PropTypes.string.isRequired,
+  updated: PropTypes.bool.isRequired
+};
 
 export default CreateQuake;

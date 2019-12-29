@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/USGSQuery.css";
+import PropTypes from 'prop-types';
 import styled from "styled-components";
 
 const Button = styled.button.attrs({
@@ -8,22 +8,28 @@ const Button = styled.button.attrs({
   margin: 15px 15px 15px 5px;
 `;
 
-class USGSQuake extends React.Component {
-  render() {
-    const { quakeId, place, coors, mag, time, saveToDatabase } = this.props;
-    return (
-      <div id="quake">
-        <div className="quake-details">
-          <div className="quake-property">Quake Id: {quakeId}</div>
-          <div className="quake-property">Place: {place}</div>
-          <div className="quake-property">Coordinates: {coors}</div>
-          <div className="quake-property">Magnitude: {mag}</div>
-          <div className="quake-property">Time: {time}</div>
-        </div>
-        <Button onClick={saveToDatabase}>Save Quake</Button>
+const USGSQuake = props => {
+  return (
+    <div id="quake">
+      <div className="quake-details">
+        <div className="quake-property">Quake Id: {props.quakeId}</div>
+        <div className="quake-property">Place: {props.place}</div>
+        <div className="quake-property">Coordinates: {props.coors}</div>
+        <div className="quake-property">Magnitude: {props.mag}</div>
+        <div className="quake-property">Time: {props.time}</div>
       </div>
-    );
-  }
-}
+      <Button onClick={props.saveToDatabase}>Save Quake</Button>
+    </div>
+  );
+};
+
+USGSQuake.propTypes = {
+  quakeId: PropTypes.string.isRequired,
+  place: PropTypes.string,
+  coors: PropTypes.string.isRequired,
+  mag: PropTypes.number,
+  time: PropTypes.string.isRequired,
+  saveToDatabase: PropTypes.func.isRequired
+};
 
 export default USGSQuake;
