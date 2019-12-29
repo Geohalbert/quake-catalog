@@ -14,7 +14,6 @@ class QuakeList extends React.Component {
   
   render() {
     const { quakes, isLoading } = this.props;
-    console.log(`presentational component for QuakeList works`, quakes);
 
     const columns = [
       {

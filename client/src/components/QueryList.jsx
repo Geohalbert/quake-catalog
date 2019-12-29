@@ -30,19 +30,15 @@ class QueryList extends Component {
 
     propsLoaded = (quakes) => {
         if (quakes) {
-            console.log('props DID load INDEED')
             this.setState({
                 quakes: quakes.data,
                 isLoading: false
             })
-        } else {
-            console.log('props did not load')
         }
     } 
 
     render() {
         const { quakes, isLoading } = this.state
-        console.log('TCL: QuakesList -> render -> quakes', quakes)
 
         const columns = [
             {
