@@ -63,7 +63,6 @@ class QuakeList extends React.Component {
 
     return (
       <Wrapper>
-          <div>Hello</div>
         {showTable && (
             
           <ReactTable
