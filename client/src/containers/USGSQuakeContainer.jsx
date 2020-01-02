@@ -1,6 +1,6 @@
 import React from "react";
 import USGSService from "../services/USGSService";
-import api from "../api";
+import QuakeServices from "../services/QuakeService";
 import { Redirect } from "react-router-dom";
 import QuakeMap from "../components/QuakeMap.jsx";
 import USGSQuake from "../components/USGSQuake.jsx";
@@ -44,7 +44,7 @@ class USGSQuakeContainer extends React.Component {
     const time = properties.time;
     const payload = { name, mag, coordinates, time };
 
-    await api.addQuake(payload).then(res => {
+    await QuakeServices.addQuake(payload).then(res => {
       window.alert(`Quake saved successfully`);
       this.setState({
         saved: true

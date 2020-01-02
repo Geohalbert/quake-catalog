@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import api from '../api'
+import QuakeServices from "../services/QuakeService";
 import styled from 'styled-components'
 
 const Delete = styled.div`
@@ -17,7 +17,7 @@ class DeleteQuake extends Component {
                 `Do tou want to delete the quake ${this.props.id} permanently?`,
             )
         ) {
-            api.deleteQuakeById(this.props.id)
+            QuakeServices.deleteQuakeById(this.props.id)
             window.location.reload()
         }
     }

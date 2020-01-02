@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import api from "../api";
+import QuakeServices from "../services/QuakeService";
 
 import styled from "styled-components";
 
@@ -63,7 +63,7 @@ class QuakesUpdate extends Component {
     const { id, name, mag } = this.state;
     const payload = { name, mag };
 
-    await api.updateQuakeById(id, payload).then(res => {
+    await QuakeServices.updateQuakeById(id, payload).then(res => {
       window.alert(`Quake updated successfully`);
       this.setState({
         name: "",
@@ -74,7 +74,7 @@ class QuakesUpdate extends Component {
 
   componentDidMount = async () => {
     const { id } = this.state;
-    const quake = await api.getQuakeById(id);
+    const quake = await QuakeServices.getQuakeById(id);
 
     this.setState({
       name: quake.data.data.name,

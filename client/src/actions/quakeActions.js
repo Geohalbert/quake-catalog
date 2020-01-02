@@ -1,5 +1,5 @@
 import { quakeConstants } from "../constants";
-import { QuakeService } from "../services";
+import { QuakeServices } from "../services";
 import { alertActions } from "./";
 import { history } from "../_helpers";
 
@@ -66,7 +66,7 @@ function login(username, password) {
   return dispatch => {
     dispatch(request({ username }));
 
-    QuakeService.login(username, password).then(
+    QuakeServices.login(username, password).then(
       user => {
         dispatch(success(user));
         history.push("/");
@@ -90,7 +90,7 @@ function login(username, password) {
 }
 
 function logout() {
-  QuakeService.logout();
+  QuakeServices.logout();
   return { type: quakeConstants.LOGOUT };
 }
 
@@ -98,7 +98,7 @@ function register(user) {
   return dispatch => {
     dispatch(request(user));
 
-    QuakeService.register(user).then(
+    QuakeServices.register(user).then(
       user => {
         dispatch(success());
         history.push("/login");
@@ -126,7 +126,7 @@ function getAll() {
   return dispatch => {
     dispatch(request());
 
-    QuakeService.getAll().then(
+    QuakeServices.getAll().then(
       users => dispatch(success(users)),
       error => dispatch(failure(error.toString()))
     );
@@ -148,7 +148,7 @@ function _delete(id) {
   return dispatch => {
     dispatch(request(id));
 
-    QuakeService.delete(id).then(
+    QuakeServices.delete(id).then(
       user => dispatch(success(id)),
       error => dispatch(failure(id, error.toString()))
     );

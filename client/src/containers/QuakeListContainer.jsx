@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import QuakeList from "../components/QuakeList";
-import api from "../api";
+import QuakeServices from "../services/QuakeService";
 
 export class QuakeListContainer extends Component {
   constructor() {
@@ -14,7 +14,7 @@ export class QuakeListContainer extends Component {
   componentDidMount = async () => {
     this.setState({ isLoading: true });
 
-    await api.getAllQuakes().then(quakes => {
+    await QuakeServices.getAllQuakes().then(quakes => {
       this.setState({
         quakes: quakes.data.data,
         isLoading: false

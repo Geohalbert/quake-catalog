@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CreateQuake from "../components/CreateQuake";
 import { Redirect } from "react-router-dom";
-import api from "../api";
+import QuakeServices from "../services/QuakeService";;
 
 export class CreateQuakeContainer extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ export class CreateQuakeContainer extends Component {
     const { name, mag } = this.state;
     const payload = { name, mag };
 
-    await api.addQuake(payload).then(res => {
+    await QuakeServices.addQuake(payload).then(res => {
       window.alert(`Quake inserted successfully`);
       this.setState({
         name: "",
