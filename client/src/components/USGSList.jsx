@@ -6,7 +6,7 @@ class USGSList extends React.Component {
     return this.props.quakes.map((quake, key) => {
       return (
         <div key={key} className="quakeLink">
-          <Link to={`/USGS/${quake.id}`}>Quake: {quake.id} | Mag: {quake.properties.mag} | Coordinates: {quake.geometry.coordinates} </Link>
+          <Link to={`/USGS/${quake.id}`}>Quake: {quake.id} | Mag: {quake.properties.mag} | Coordinates: {quake.geometry.coordinates[1]}, {quake.geometry.coordinates[0]}, {quake.geometry.coordinates[2]} </Link>
         </div>
       );
     });

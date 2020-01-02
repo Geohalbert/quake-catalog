@@ -55,7 +55,8 @@ class USGSQuakeContainer extends React.Component {
   render() {
     const { quakeId, properties, coordinates, saved } = this.state;
     const convertTime = new Date(properties.time).toLocaleString();
-    const coors = coordinates.join(", ");
+    const newCoor = [coordinates[1],coordinates[0],coordinates[2]]
+    const coors = newCoor.join(", ");
     if (saved) {
       return <Redirect to="/USGS" />;
     }
