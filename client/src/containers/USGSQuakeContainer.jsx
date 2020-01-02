@@ -2,7 +2,7 @@ import React from "react";
 import USGSService from "../services/USGSService";
 import api from "../api";
 import { Redirect } from "react-router-dom";
-import Map from "../components/Map.jsx";
+import QuakeMap from "../components/QuakeMap.jsx";
 import USGSQuake from "../components/USGSQuake.jsx";
 
 class USGSQuakeContainer extends React.Component {
@@ -69,8 +69,7 @@ class USGSQuakeContainer extends React.Component {
           mag={properties.mag}
           time={convertTime}
         />
-        {/* for now Im just forcing Map to display */}
-        {coordinates && <Map lat={coordinates[0]} lng={coordinates[1]} />}
+        {coordinates && <QuakeMap lat={coordinates[1]} lng={coordinates[0]} />}
       </div>
     );
   }

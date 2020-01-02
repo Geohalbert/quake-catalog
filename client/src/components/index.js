@@ -2,10 +2,11 @@ import Banner from "./Banner";
 import CreateQuake from "./CreateQuake";
 import DeleteQuake from "./DeleteQuake";
 import Links from "./Links";
-import Map from "./Map";
 import NavBar from "./NavBar";
 import QuakeList from "./QuakeList";
 import QuakeLocation from "./QuakeLocation";
+import QuakeMap from "./QuakeMap";
+import QuakeMarker from "./QuakeMarker";
 import QueryList from "./QueryList";
 import UpdateQuake from "./UpdateQuake";
 import USGS from "./USGS";
@@ -18,10 +19,11 @@ export {
   CreateQuake,
   DeleteQuake,
   Links,
-  Map,
   NavBar,
   QuakeList,
   QuakeLocation,
+  QuakeMap,
+  QuakeMarker,
   QueryList,
   UpdateQuake,
   USGS,
