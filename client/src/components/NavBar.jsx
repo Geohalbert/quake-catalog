@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import Banner from './Banner'
+// import Banner from './Banner'
 import Links from './Links'
 
 const Container = styled.div.attrs({

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
 import styled from 'styled-components'
-import api from '../api'
 
 const Update = styled.div`
     color: #ef9b0f;
