@@ -1,6 +1,6 @@
 import React from "react";
 import USGSService from "../services/USGSService";
-import QuakeServices from "../services/QuakeService";
+import QuakeServices from "../services/QuakeServices";
 import { Redirect } from "react-router-dom";
 import QuakeMap from "../components/QuakeMap.jsx";
 import USGSQuake from "../components/USGSQuake.jsx";

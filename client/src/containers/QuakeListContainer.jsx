@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import QuakeList from "../components/QuakeList";
-import QuakeServices from "../services/QuakeService";
+import QuakeServices from "../services/QuakeServices";
 
 export class QuakeListContainer extends Component {
   constructor() {

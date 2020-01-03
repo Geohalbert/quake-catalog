@@ -53,10 +53,9 @@ const QuakeList = props => {
   ];
 
   let showTable = true;
-  if (!props.quakes.length) {
+  if (!props.quakes) {
     showTable = false;
   }
-
   return (
     <Wrapper>
       {showTable && (

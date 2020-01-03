@@ -1,11 +1,11 @@
-import QuakeListContainer from "./QuakeListContainer";
 import CreateQuakeContainer from "./CreateQuakeContainer";
+import QuakeListContainer from "./QuakeListContainer";
 import USGSQuakeContainer from "./USGSQuakeContainer";
 import USGSQueryContainer from "./USGSQueryContainer";
 
 export {
-  QuakeListContainer,
   CreateQuakeContainer,
+  QuakeListContainer,
   USGSQuakeContainer,
   USGSQueryContainer
 };

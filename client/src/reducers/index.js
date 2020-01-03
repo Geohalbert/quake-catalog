@@ -1,11 +1,10 @@
 import { combineReducers } from "redux";
 
-// import { quakes } from "./quakeReducers";
-
+import { quakes } from "./quakeReducers";
 import { alert } from "./alertReducers";
 
 const rootReducer = combineReducers({
-  //   quakes
+  quakes,
   alert
 });
 

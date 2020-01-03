@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import QuakeServices from "../services/QuakeService";
+import QuakeServices from "../services/QuakeServices";
 import styled from 'styled-components'
 
 const Delete = styled.div`

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CreateQuake from "../components/CreateQuake";
 import { Redirect } from "react-router-dom";
-import QuakeServices from "../services/QuakeService";;
+import QuakeServices from "../services/QuakeServices";;
 
 export class CreateQuakeContainer extends Component {
   constructor(props) {
