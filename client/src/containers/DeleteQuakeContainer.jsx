@@ -24,7 +24,7 @@ class DeleteQuakeContainer extends Component {
   };
 
   render() {
-    const { message } = this.props;
+    const { quake, message } = this.props;
     if (message === "Deletion successful") {
       window.location.reload();
     }
@@ -33,9 +33,9 @@ class DeleteQuakeContainer extends Component {
 }
 
 function mapState(state) {
-  const { alert } = state;
+  const { quake, alert } = state;
   const { message } = alert;
-  return { message };
+  return { quake, message };
 }
 
 const actionCreators = {
