@@ -1,8 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import HomeView from "../views/HomeView.jsx";
-import USGSQuakeContainer from "../containers/USGSQuakeContainer.jsx";
-import USGSQueryContainer from "../containers/USGSQueryContainer.jsx";
+import {USGSQuakeContainer,USGSQueryContainer} from "../containers";
 
 function USGS() {
   return (

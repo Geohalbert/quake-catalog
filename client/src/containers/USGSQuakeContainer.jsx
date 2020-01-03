@@ -76,4 +76,4 @@ class USGSQuakeContainer extends React.Component {
   }
 }
 
-export default USGSQuakeContainer;
+export {USGSQuakeContainer};

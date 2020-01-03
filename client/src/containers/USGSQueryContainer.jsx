@@ -103,4 +103,4 @@ class USGSQueryContainer extends React.Component {
     );
   }
 }
-export default USGSQueryContainer;
+export {USGSQueryContainer};

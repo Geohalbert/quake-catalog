@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import CreateQuake from "../components/CreateQuake";
 import { Redirect } from "react-router-dom";
-import QuakeServices from "../services/QuakeServices";;
 
-export class CreateQuakeContainer extends Component {
+import { connect } from "react-redux";
+import quakeActions from "../actions/quakeActions";
+
+ class CreateQuakeContainer extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       name: "",
       mag: "",
-      updated: false
+      saved: false
     };
   }
 
@@ -29,21 +31,15 @@ export class CreateQuakeContainer extends Component {
 
   handleIncludeQuake = async () => {
     const { name, mag } = this.state;
-    const payload = { name, mag };
+    const quake = { name, mag };
 
-    await QuakeServices.addQuake(payload).then(res => {
-      window.alert(`Quake inserted successfully`);
-      this.setState({
-        name: "",
-        mag: "",
-        updated: true
-      });
-    });
+    this.props.saveQuake(quake)
   };
 
   render() {
-    const { name, mag, updated } = this.state;
-    if (updated) {
+    const { name, mag, saved } = this.state;
+    const { saving } = this.props;
+    if (saving===false) {
       return <Redirect to="/quakes" />;
     }
     return (
@@ -53,10 +49,19 @@ export class CreateQuakeContainer extends Component {
         onClick={this.handleIncludeQuake}
         name={name}
         mag={mag}
-        updated={updated}
+        saved={saved}
       />
     );
   }
 }
 
-export default CreateQuakeContainer;
+function mapState(state) {
+  const { saving } = state.creation;
+  return { saving };
+}
+
+const actionCreators = {
+  saveQuake: quakeActions.createQuake
+};
+const connectedCreateQuake = connect(mapState, actionCreators)(CreateQuakeContainer);
+export { connectedCreateQuake as CreateQuakeContainer };

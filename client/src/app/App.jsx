@@ -10,7 +10,6 @@ import {
   QuakesUpdate,
   HomeView
 } from "../views";
-import {QuakeListPage} from "../QuakeListPage/QuakeListPage"
 import {
   QuakeListContainer,
   CreateQuakeContainer,
@@ -44,7 +43,7 @@ class App extends React.Component {
               <Route exact path="/" component={HomeView} />
               <Route exact path="/USGS" component={USGSQueryContainer} />
               <Route path="/USGS/:id" component={USGSQuakeContainer} />
-              <Route path="/quakes" exact component={QuakeListPage} />
+              <Route path="/quakes" exact component={QuakeListContainer} />
               <Route
                 path="/quakes/create"
                 exact

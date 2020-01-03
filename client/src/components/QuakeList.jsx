@@ -63,7 +63,7 @@ const QuakeList = props => {
           data={props.quakes}
           columns={columns}
           loading={props.isLoading}
-          defaultPageSize={10}
+          defaultPageSize={50}
           showPageSizeOptions={true}
           minRows={0}
         />

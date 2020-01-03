@@ -1,11 +1,4 @@
-import CreateQuakeContainer from "./CreateQuakeContainer";
-import QuakeListContainer from "./QuakeListContainer";
-import USGSQuakeContainer from "./USGSQuakeContainer";
-import USGSQueryContainer from "./USGSQueryContainer";
-
-export {
-  CreateQuakeContainer,
-  QuakeListContainer,
-  USGSQuakeContainer,
-  USGSQueryContainer
-};
+export * from "./CreateQuakeContainer";
+export * from "./QuakeListContainer";
+export * from "./USGSQuakeContainer";
+export * from "./USGSQueryContainer";

@@ -69,7 +69,7 @@ CreateQuake.propTypes = {
   onClick: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   mag: PropTypes.string.isRequired,
-  updated: PropTypes.bool.isRequired
+  saved: PropTypes.bool.isRequired
 };
 
 export default CreateQuake;
