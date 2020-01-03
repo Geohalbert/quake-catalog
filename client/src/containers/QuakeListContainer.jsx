@@ -4,7 +4,7 @@ import QuakeList from "../components/QuakeList";
 import { connect } from "react-redux";
 import quakeActions from "../actions/quakeActions";
 
-class QuakeListContainer extends React.Component {
+class QuakeListContainer extends Component {
   constructor() {
     super();
     this.state = {

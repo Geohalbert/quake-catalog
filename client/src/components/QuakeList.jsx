@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { DeleteQuake, UpdateQuake } from "./index.js";
+import { UpdateQuake } from "./index.js";
+import { DeleteQuakeContainer } from "../containers"
 import styled from "styled-components";
 import ReactTable from "react-table";
 
@@ -34,7 +35,7 @@ const QuakeList = props => {
       Cell: function(props) {
         return (
           <span>
-            <DeleteQuake id={props.original._id} />
+            <DeleteQuakeContainer id={props.original._id} />
           </span>
         );
       }
@@ -74,7 +75,7 @@ const QuakeList = props => {
 
 QuakeList.propTypes = {
   quakes: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool
 };
 
 export default QuakeList;
