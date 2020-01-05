@@ -7,12 +7,12 @@ import { alertActions } from "../actions";
 
 import { NavBar } from "../components";
 import {
-  QuakesUpdate,
   HomeView
 } from "../views";
 import {
   QuakeListContainer,
   CreateQuakeContainer,
+  UpdateQuakeContainer,
   USGSQuakeContainer,
   USGSQueryContainer
 } from "../containers";
@@ -49,7 +49,7 @@ class App extends React.Component {
                 exact
                 component={CreateQuakeContainer}
               />
-              <Route path="/quakes/update/:id" exact component={QuakesUpdate} />
+              <Route path="/quakes/update/:id" exact component={UpdateQuakeContainer} />
             </Switch>
           </Router>
         </div>

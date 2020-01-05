@@ -56,7 +56,7 @@ import quakeActions from "../actions/quakeActions";
 }
 
 function mapState(state) {
-  const { saving } = state.creation;
+  const { saving } = state;
   return { saving };
 }
 

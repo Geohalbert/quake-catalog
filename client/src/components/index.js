@@ -6,8 +6,8 @@ import NavBar from "./NavBar";
 import QuakeList from "./QuakeList";
 import QuakeMap from "./QuakeMap";
 import QuakeMarker from "./QuakeMarker";
-import QueryList from "./QueryList";
 import UpdateQuake from "./UpdateQuake";
+import UpdateQuakeButton from "./UpdateQuakeButton";
 import USGS from "./USGS";
 import USGSList from "./USGSList";
 import USGSQuake from "./USGSQuake";
@@ -22,8 +22,8 @@ export {
   QuakeList,
   QuakeMap,
   QuakeMarker,
-  QueryList,
   UpdateQuake,
+  UpdateQuakeButton,
   USGS,
   USGSList,
   USGSQuake,

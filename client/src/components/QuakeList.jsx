@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { UpdateQuake } from "./index.js";
-import { DeleteQuakeContainer } from "../containers"
+import { DeleteQuakeContainer} from "../containers"
+import UpdateQuakeButton from "./UpdateQuakeButton"
 import styled from "styled-components";
 import ReactTable from "react-table";
 
@@ -46,7 +46,7 @@ const QuakeList = props => {
       Cell: function(props) {
         return (
           <span>
-            <UpdateQuake id={props.original._id} />
+            <UpdateQuakeButton id={props.original._id} />
           </span>
         );
       }

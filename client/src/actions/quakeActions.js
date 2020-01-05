@@ -5,8 +5,10 @@ import { alertActions } from "./";
 
 const quakeActions = {
   getAll,
+  // getQuake,
   createQuake,
-  deleteQuake
+  deleteQuake,
+  updateQuake
 };
 
 function getAll() {
@@ -37,7 +39,7 @@ function createQuake(quake) {
     QuakeServices.addQuake(quake).then(
       quake => {
         dispatch(success(quake));
-        dispatch(alertActions.success("Registration successful"));
+        dispatch(alertActions.success("Quake creation successful"));
       },
       error => {
         dispatch(failure(error.toString()));
@@ -81,6 +83,33 @@ function deleteQuake(id) {
   }
   function failure(id, error) {
     return { type: quakeConstants.DELETE_QUAKE_FAILURE, id, error };
+  }
+}
+
+function updateQuake(id, payload) {
+  return dispatch => {
+    dispatch(request(id, payload));
+
+    QuakeServices.updateQuakeById(id, payload).then(
+      quake => {
+        dispatch(success(id, payload));
+        dispatch(alertActions.success("Update successful"));
+      },
+      error => {
+        dispatch(failure(id, error.toString()));
+        dispatch(alertActions.error(error.toString()));
+      }
+    );
+  };
+
+  function request(id) {
+    return { type: quakeConstants.QUAKE_UPDATE_REQUEST, id };
+  }
+  function success(id) {
+    return { type: quakeConstants.QUAKE_UPDATE_SUCCESS, id, payload };
+  }
+  function failure(id, error) {
+    return { type: quakeConstants.QUAKE_UPDATE_FAILURE, id, error };
   }
 }
 

@@ -1,4 +1,5 @@
 import { quakeConstants } from "../constants";
+import utilityFunctions from "./utilityFunctions";
 
 export function quakes(state = {}, action) {
   switch (action.type) {
@@ -17,6 +18,32 @@ export function quakes(state = {}, action) {
         error: action.error
       };
 
+    // addQuake
+    case quakeConstants.CREATE_QUAKE_REQUEST:
+      return { saving: true };
+    case quakeConstants.CREATE_QUAKE_SUCCESS:
+      return { saving: false };
+    case quakeConstants.CREATE_QUAKE_FAILURE:
+      return { error: action.error };
+
+    // getQuake
+    case quakeConstants.GET_QUAKE_REQUEST:
+      return {
+        retrieving: true
+      };
+    case quakeConstants.GET_QUAKE_SUCCESS:
+      return {
+        ...state,
+        items: state.items.map(quake =>
+          quake.id === action.id ? { ...quake } : quake
+        )
+      };
+    case quakeConstants.GET_QUAKE_FAILURE:
+      return {
+        error: action.error
+      };
+
+    //deleteQuake
     case quakeConstants.DELETE_QUAKE_REQUEST:
       // add 'deleting:true' property to quake being deleted
       return {
